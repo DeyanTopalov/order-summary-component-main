@@ -19,7 +19,7 @@
   4. Improve text rendering
 */
 body {
-  line-height: 1.7;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 /*
@@ -71,6 +71,7 @@ h6 {
   --clr-very-pale-blue: hsl(225, 100%, 98%);
   --clr-desatured-blue: hsl(224, 23%, 55%);
   --clr-dark-blue: hsl(223, 47%, 23%);
+  --clr-white: hsl(0, 0%, 100%);
 
   --fs-regular: 1rem;
 
@@ -79,4 +80,70 @@ h6 {
   --fw-regular: 500;
   --fw-bold: 700;
   --fw-bold-xxl: 900;
+
+  --spacing-s: 0.5rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.5rem;
+  --spacing-xl: 2rem;
+
+  --card-with: 20.313rem;
+
+  @media (min-width: 600px) {
+    --card-with: 25rem;
+  }
+}
+
+/* Sizes: desktop 400/ mobile 325 */
+
+/* Global Styles */
+body {
+  /* background-image: url(images/pattern-background-mobile.svg); */
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: lightgray;
+  margin: var(--spacing-s);
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-regular);
+}
+
+/* Utility Styles */
+
+.flex-group {
+  background-color: var(--clr-very-pale-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-m);
+  border-radius: 0.7rem;
+}
+
+/* Card Styles */
+.card {
+  max-width: var(--card-with);
+  display: grid;
+  background-color: var(--clr-white);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__context {
+  display: grid;
+  padding: var(--spacing-l);
+  gap: var(--spacing-m);
+}
+
+.card_context_title,
+.card_context_description {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.wrapper::before {
+  content: url(images/icon-music.svg);
 }
