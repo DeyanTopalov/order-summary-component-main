@@ -61,6 +61,16 @@ h6 {
 #__next {
   isolation: isolate;
 }
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url("assets/redhatdisplay-variablefont_wght-webfont.woff2")
+      format("woff2") tech("variations"),
+    url("assets/redhatdisplay-variablefont_wght-webfont.woff2")
+      format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Primary clrs */
@@ -71,11 +81,12 @@ h6 {
   --clr-very-pale-blue: hsl(225, 100%, 98%);
   --clr-desatured-blue: hsl(224, 23%, 55%);
   --clr-dark-blue: hsl(223, 47%, 23%);
+  --clr-hover-blue: hsl(244, 84%, 69%);
   --clr-white: hsl(0, 0%, 100%);
 
   --fs-regular: 1rem;
 
-  --ff-body: "Red Hat Display", sans-serif;
+  --ff-body: "RedHatDisplay", sans-serif;
 
   --fw-regular: 500;
   --fw-bold: 700;
@@ -86,25 +97,29 @@ h6 {
   --spacing-l: 1.5rem;
   --spacing-xl: 2rem;
 
-  /* 325px */
   --card-with: 20.313rem;
+  --bg-img: url(images/pattern-background-mobile.svg);
 
-  /* 400px */
   @media (min-width: 600px) {
     --card-with: 25rem;
   }
-}
 
-/* Sizes: desktop 400/ mobile 325 */
+  @media (min-width: 376px) {
+    --bg-img: url(images/pattern-background-desktop.svg);
+  }
+}
 
 /* Global Styles */
 body {
-  /* background-image: url(images/pattern-background-mobile.svg); */
+  background-image: var(--bg-img);
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: grid;
   place-content: center;
-  background-color: lightgray;
+  background-color: var(--clr-pale-blue);
   margin: var(--spacing-s);
+  font-family: var(--ff-body);
+  /* font-family: "RedHatDisplay", sans-serif; */
   font-size: var(--fs-regular);
   font-weight: var(--fw-regular);
   color: var(--clr-desatured-blue);
@@ -178,7 +193,7 @@ button,
   border: none;
   border-radius: 0.7rem;
   cursor: pointer;
-  box-shadow: 10px 10px 10px hsla(245, 75%, 52%, 0.208);
+  box-shadow: 0.625rem 0.625rem 0.625rem hsla(245, 75%, 52%, 0.208);
 }
 
 .button_cancel {
@@ -187,4 +202,17 @@ button,
   padding: var(--spacing-s);
   color: var(--clr-desatured-blue);
   cursor: pointer;
+}
+
+.button_proceed:hover {
+  background-color: var(--clr-hover-blue);
+}
+
+.link:hover {
+  text-decoration: none;
+  color: var(--clr-hover-blue);
+}
+
+.button_cancel:hover {
+  color: var(--clr-dark-blue);
 }
