@@ -61,7 +61,7 @@ h6 {
 #__next {
   isolation: isolate;
 }
-@font-face {
+/* @font-face {
   font-family: "RedHatDisplay";
   src: url("assets/redhatdisplay-variablefont_wght-webfont.woff2")
       format("woff2") tech("variations"),
@@ -70,7 +70,8 @@ h6 {
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-}
+} */
+/* this did not worked as well as the cdn */
 
 :root {
   /* Primary clrs */
@@ -86,7 +87,7 @@ h6 {
 
   --fs-regular: 1rem;
 
-  --ff-body: "RedHatDisplay", sans-serif;
+  --ff-body: "Red Hat Display", sans-serif;
 
   --fw-regular: 500;
   --fw-bold: 700;
@@ -119,7 +120,6 @@ body {
   background-color: var(--clr-pale-blue);
   margin: var(--spacing-s);
   font-family: var(--ff-body);
-  /* font-family: "RedHatDisplay", sans-serif; */
   font-size: var(--fs-regular);
   font-weight: var(--fw-regular);
   color: var(--clr-desatured-blue);
