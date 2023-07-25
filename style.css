@@ -98,21 +98,16 @@ h6 {
   --spacing-l: 1.5rem;
   --spacing-xl: 2rem;
 
-  --card-with: 20.313rem;
-  --bg-img: url(images/pattern-background-mobile.svg);
+  --card-width-small: 20.313rem;
+  --card-width-large: 25rem;
 
-  @media (min-width: 600px) {
-    --card-with: 25rem;
-  }
-
-  @media (min-width: 376px) {
-    --bg-img: url(images/pattern-background-desktop.svg);
-  }
+  --bg-img-small: url(images/pattern-background-mobile.svg);
+  --bg-img-large: url(images/pattern-background-desktop.svg);
 }
 
 /* Global Styles */
 body {
-  background-image: var(--bg-img);
+  background-image: var(--bg-img-small);
   background-repeat: no-repeat;
   min-height: 100vh;
   display: grid;
@@ -139,7 +134,7 @@ body {
 
 /* Card Styles */
 .card {
-  max-width: var(--card-with);
+  max-width: var(--card-width-small);
   display: grid;
   background-color: var(--clr-white);
   border-radius: 1rem;
@@ -215,4 +210,17 @@ button,
 
 .button_cancel:hover {
   color: var(--clr-dark-blue);
+}
+
+@media (min-width: 376px) {
+  body {
+    background-image: var(--bg-img-large);
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 500px) {
+  .card {
+    max-width: var(--card-width-large);
+  }
 }
